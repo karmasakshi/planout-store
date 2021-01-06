@@ -1,7 +1,6 @@
 - Add Configuration interface
 - Add GET Configuration API
 - Add SET Configuration API
-- Add store layout
 - Add detail page layout
 - Add images
 - Add products API
