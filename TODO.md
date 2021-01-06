@@ -1,5 +1,4 @@
 - Add routes
-- Add Planout
 - Add Configuration interface
 - Add API
 - Add store layout
