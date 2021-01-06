@@ -1,0 +1,10 @@
+- Add routes
+- Add Planout
+- Add Configuration interface
+- Add API
+- Add store layout
+- Add detail page layout
+- Add images
+- Add products API
+- Add analytics API
+- Add analytics graph
