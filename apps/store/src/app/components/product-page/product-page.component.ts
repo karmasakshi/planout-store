@@ -38,7 +38,7 @@ export class ProductPageComponent implements OnInit {
 
         this.product = product;
 
-        this.heroImgSrc = this.product?.imageUrls[0];
+        this.heroImgSrc = this.product?.imageUrls[this.configuration.productHeroImage];
 
       },
 

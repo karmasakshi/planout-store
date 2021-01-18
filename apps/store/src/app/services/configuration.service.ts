@@ -13,7 +13,7 @@ export class ConfigurationService {
     detailCtaColor: 'accent',
     detailCtaText: 'DETAILS',
     isReviewsPrioritized: false,
-    productHeroImage: 'left',
+    productHeroImage: 'right',
     productThumbnailImage: 'bottom'
   });
 

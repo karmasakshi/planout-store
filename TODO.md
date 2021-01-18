@@ -1,3 +1,4 @@
+- Generate configuration in API
 - Add GET Configuration API
 - Add SET Configuration API
 - Add analytics API
