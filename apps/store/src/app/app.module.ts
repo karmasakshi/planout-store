@@ -1,5 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,6 +21,7 @@ import { ProductPageComponent } from './components/product-page/product-page.com
   ],
   imports: [
     HttpClientModule,
+    MatButtonModule,
     MatCardModule,
     MatToolbarModule,
     BrowserModule,

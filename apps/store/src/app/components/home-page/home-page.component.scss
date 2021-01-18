@@ -1,18 +1,19 @@
-.background {
-  background-attachment: fixed;
-  background-image: url('https://source.unsplash.com/random/1200x400/?abstract');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 40vh;
-}
-
 .product-card-container {
-  margin: -20vh auto 10vh;
+  margin: 0 auto;
   max-width: 560px;
   padding: 0 20px;
 
   .product-card {
-    margin-bottom: 20px;
+    margin: 20px 0;
+
+    .mat-card-content {
+      display: flex;
+
+      .product-image {
+        border-radius: 4px;
+        height: 120px;
+        margin-right: 20px;
+      }
+    }
   }
 }

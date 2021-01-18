@@ -1,9 +1,16 @@
-<div class="background"></div>
-
 <div class="product-card-container">
 
-  <mat-card class="product-card">
-    <mat-card-content></mat-card-content>
+  <mat-card class="product-card" *ngFor="let product of products">
+
+    <mat-card-content>
+      <img class="product-image" [src]="product.imageUrls[0]">
+      <h2>{{ product.name }}</h2>
+    </mat-card-content>
+
+    <mat-card-footer align="end">
+      <a color="primary" [routerLink]="['/product', product.id]" mat-raised-button style="margin: 16px;" type="button">DETAILS</a>
+    </mat-card-footer>
+
   </mat-card>
 
 </div>
