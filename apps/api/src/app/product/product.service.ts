@@ -4,20 +4,21 @@ import { Product } from '@planout-store/api-interfaces';
 @Injectable()
 export class ProductService {
 
+  private blackShoe: Product = {
+    name: 'Nike Black Shoe',
+    id: 1,
+    imageUrls: ['/assets/1-left.jpg', '/assets/1-bottom.jpg', '/assets/1-right.jpg']
+  };
+
+  private whiteShoe: Product = {
+    name: 'Nike White Shoe',
+    id: 2,
+    imageUrls: ['/assets/2-left.jpg', '/assets/2-bottom.jpg', '/assets/2-right.jpg']
+  };
+
   getAll(): Product[] {
 
-    return [
-      {
-        name: 'Nike Black Shoe',
-        id: 1,
-        imageUrls: ['/assets/1-1.jpg', '/assets/1-2.jpg', '/assets/1-3.jpg']
-      },
-      {
-        name: 'Nike White Shoe',
-        id: 2,
-        imageUrls: ['/assets/2-1.jpg', '/assets/2-2.jpg', '/assets/2-3.jpg']
-      }
-    ];
+    return [this.blackShoe, this.whiteShoe];
 
   }
 
@@ -25,19 +26,11 @@ export class ProductService {
 
     if (id === '1') {
 
-      return {
-        id: 1,
-        name: 'Nike Black Shoe',
-        imageUrls: ['/assets/1-1.jpg', '/assets/1-2.jpg', '/assets/1-3.jpg']
-      };
+      return this.blackShoe;
 
     } else if (id === '2') {
 
-      return {
-        id: 2,
-        name: 'Nike White Shoe',
-        imageUrls: ['/assets/2-1.jpg', '/assets/2-2.jpg', '/assets/2-3.jpg']
-      };
+      return this.whiteShoe;
 
     } else {
 
