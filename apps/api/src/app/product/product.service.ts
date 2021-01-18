@@ -7,13 +7,13 @@ export class ProductService {
   private blackShoe: Product = {
     name: 'Nike Black Shoe',
     id: 1,
-    imageUrls: ['/assets/1-left.jpg', '/assets/1-bottom.jpg', '/assets/1-right.jpg']
+    imageUrls: { left: '/assets/1-left.jpg', bottom: '/assets/1-bottom.jpg', right: '/assets/1-right.jpg' }
   };
 
   private whiteShoe: Product = {
     name: 'Nike White Shoe',
     id: 2,
-    imageUrls: ['/assets/2-left.jpg', '/assets/2-bottom.jpg', '/assets/2-right.jpg']
+    imageUrls: { left: '/assets/2-left.jpg', bottom: '/assets/2-bottom.jpg', right: '/assets/2-right.jpg' }
   };
 
   getAll(): Product[] {

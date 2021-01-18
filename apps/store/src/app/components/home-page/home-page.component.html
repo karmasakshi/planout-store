@@ -3,12 +3,12 @@
   <mat-card class="product-card" *ngFor="let product of products">
 
     <mat-card-content>
-      <img class="product-image" [src]="product.imageUrls[0]">
+      <img class="product-image" [src]="product.imageUrls[configuration.productThumbnailImage]">
       <h2>{{ product.name }}</h2>
     </mat-card-content>
 
     <mat-card-footer align="end">
-      <a color="primary" [routerLink]="['/product', product.id]" mat-raised-button style="margin: 16px;" type="button">DETAILS</a>
+      <a [color]="configuration.detailCtaColor" [routerLink]="['/product', product.id]" mat-raised-button style="margin: 16px;" type="button">{{ configuration.detailCtaText }}</a>
     </mat-card-footer>
 
   </mat-card>

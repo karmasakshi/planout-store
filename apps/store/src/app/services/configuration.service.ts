@@ -8,11 +8,13 @@ import { BehaviorSubject } from 'rxjs';
 export class ConfigurationService {
 
   public configuration$: BehaviorSubject<Configuration> = new BehaviorSubject({
-    ctaColor: 'primary',
-    ctaText: 'BUY NOW',
+    buyCtaColor: 'primary',
+    buyCtaText: 'BUY NOW',
+    detailCtaColor: 'accent',
+    detailCtaText: 'DETAILS',
     isReviewsPrioritized: false,
     productHeroImage: 'left',
-    productThumbnailImage: 'left'
+    productThumbnailImage: 'bottom'
   });
 
 }

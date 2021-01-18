@@ -1,5 +1,5 @@
 export interface Product {
   name: string;
   id: number;
-  imageUrls: string[];
+  imageUrls: { left: string; right: string; bottom: string; };
 }
