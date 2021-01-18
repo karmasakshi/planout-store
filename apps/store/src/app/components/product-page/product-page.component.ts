@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Product } from '@planout-store/api-interfaces';
+import { Configuration, Product } from '@planout-store/api-interfaces';
+import { ConfigurationService } from '../../services/configuration.service';
 
 @Component({
   selector: 'planout-store-product-page',
@@ -10,16 +11,24 @@ import { Product } from '@planout-store/api-interfaces';
 })
 export class ProductPageComponent implements OnInit {
 
+  public configuration: undefined | Configuration = undefined;
   public heroImgSrc: undefined | string = undefined;
   public product: undefined | Product = undefined;
   public productId: undefined | string = undefined;
 
   public constructor(
     private activatedRoute: ActivatedRoute,
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private configurationService: ConfigurationService
   ) { }
 
   public ngOnInit(): void {
+
+    this.configurationService.configuration$.subscribe(
+
+      (configuration: Configuration) => { this.configuration = configuration; }
+
+    );
 
     this.productId = this.activatedRoute.snapshot.params.id;
 
