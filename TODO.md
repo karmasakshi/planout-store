@@ -1,4 +1,3 @@
-- Add Configuration interface
 - Add GET Configuration API
 - Add SET Configuration API
 - Add analytics API
