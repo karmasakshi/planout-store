@@ -1,7 +1,6 @@
 - Add Configuration interface
 - Add GET Configuration API
 - Add SET Configuration API
-- Add detail page layout
 - Add analytics API
 - Add analytics graph
 - Add Configuration page
