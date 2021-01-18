@@ -2,7 +2,6 @@
 - Add GET Configuration API
 - Add SET Configuration API
 - Add detail page layout
-- Add products API
 - Add analytics API
 - Add analytics graph
 - Add Configuration page
