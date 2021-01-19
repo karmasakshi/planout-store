@@ -1,6 +1,6 @@
 
 import { Controller, Get, Param } from '@nestjs/common';
-import { Product } from '@planout-store/api-interfaces';
+import type { Product } from '@planout-store/api-interfaces';
 import { ProductService } from './product.service';
 
 @Controller('product')
