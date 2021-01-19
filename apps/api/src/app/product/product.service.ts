@@ -5,13 +5,13 @@ import { Product } from '@planout-store/api-interfaces';
 export class ProductService {
 
   private blackShoe: Product = {
-    name: 'Nike Black Shoe',
+    name: 'Nike Black Shoes',
     id: 1,
     imageUrls: { left: '/assets/1-left.jpg', bottom: '/assets/1-bottom.jpg', right: '/assets/1-right.jpg' }
   };
 
   private whiteShoe: Product = {
-    name: 'Nike White Shoe',
+    name: 'Nike White Shoes',
     id: 2,
     imageUrls: { left: '/assets/2-left.jpg', bottom: '/assets/2-bottom.jpg', right: '/assets/2-right.jpg' }
   };
