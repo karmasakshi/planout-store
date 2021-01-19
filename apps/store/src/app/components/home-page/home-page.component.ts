@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Configuration, Product } from '@planout-store/api-interfaces';
-import { ConfigurationService } from '../../services/configuration.service';
+import { ConfigurationService } from '../../services/configuration/configuration.service';
 
 @Component({
   selector: 'planout-store-home-page',

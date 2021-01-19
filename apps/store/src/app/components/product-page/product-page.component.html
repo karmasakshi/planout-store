@@ -6,7 +6,7 @@
 
     <br />
 
-    <div *ngFor="let imageUrl of product?.imageUrls" style="display: inline-flex;">
+    <div *ngFor="let imageUrl of imageUrls" style="display: inline-flex;">
       <img (click)="heroImgSrc = imageUrl" [src]="imageUrl" style="cursor: pointer; margin: 4px 0 0 8px; width: 100px;">
     </div>
 
@@ -14,7 +14,7 @@
 
   <div style="flex: 1 1 0px; margin: 10px; padding: 40px;">
 
-    <h1>{{ product.name }}</h1>
+    <h1>{{ product?.name }}</h1>
     <h3>$ XXX.xx</h3>
     <div>
       <button [color]="configuration.buyCtaColor" mat-raised-button type="button">{{ configuration.buyCtaText }}</button>

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Configuration, Product } from '@planout-store/api-interfaces';
-import { ConfigurationService } from '../../services/configuration.service';
+import { ConfigurationService } from '../../services/configuration/configuration.service';
 
 @Component({
   selector: 'planout-store-product-page',
@@ -13,6 +13,7 @@ export class ProductPageComponent implements OnInit {
 
   public configuration: undefined | Configuration = undefined;
   public heroImgSrc: undefined | string = undefined;
+  public imageUrls: string[] = [];
   public product: undefined | Product = undefined;
   public productId: undefined | string = undefined;
 
@@ -37,6 +38,8 @@ export class ProductPageComponent implements OnInit {
       (product: Product): void => {
 
         this.product = product;
+
+        this.imageUrls = Object.values(this.product.imageUrls);
 
         this.heroImgSrc = this.product?.imageUrls[this.configuration.productHeroImage];
 
