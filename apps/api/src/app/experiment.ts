@@ -1,15 +1,18 @@
-import { Configuration, ConfigurationOptions } from '@planout-store/api-interfaces';
+import { Configuration, Param } from '@planout-store/api-interfaces';
 import * as PlanOut from 'planout';
 
 export class Experiment extends PlanOut.Experiment<number, Configuration> {
 
-  private configurationOptions: undefined | ConfigurationOptions = undefined;
+  private name: undefined | string = undefined;
+  private params: Param[] = [];
 
-  constructor(userId: number, configurationOptions: ConfigurationOptions) {
+  constructor(name: string, userId: number, params: Param[]) {
 
     super(userId);
 
-    this.configurationOptions = configurationOptions;
+    this.name = name;
+
+    this.params = params;
 
   }
 
@@ -19,19 +22,17 @@ export class Experiment extends PlanOut.Experiment<number, Configuration> {
 
   previouslyLogged(): boolean { return this._exposureLogged; }
 
-  setup(): any { this.setName('XP'); }
+  setup(): any { this.setName(this.name); }
 
   getParamNames(): any { return this.getDefaultParamNames(); }
 
-  assign(params: any, userId: number): void {
+  assign(planoutParams: any, userId: number): void {
 
-    params.set('buyCtaColor', new PlanOut.Ops.Random.UniformChoice({ choices: this.configurationOptions?.buyCtaColor, unit: userId }));
-    params.set('buyCtaText', new PlanOut.Ops.Random.UniformChoice({ choices: this.configurationOptions?.buyCtaText, unit: userId }));
-    params.set('detailCtaColor', new PlanOut.Ops.Random.UniformChoice({ choices: this.configurationOptions?.detailCtaColor, unit: userId }));
-    params.set('detailCtaText', new PlanOut.Ops.Random.UniformChoice({ choices: this.configurationOptions?.detailCtaText, unit: userId }));
-    params.set('isReviewsPrioritized', new PlanOut.Ops.Random.UniformChoice({ choices: this.configurationOptions?.isReviewsPrioritized, unit: userId }));
-    params.set('productHeroImage', new PlanOut.Ops.Random.UniformChoice({ choices: this.configurationOptions?.productThumbnailImage, unit: userId }));
-    params.set('productThumbnailImage', new PlanOut.Ops.Random.UniformChoice({ choices: this.configurationOptions?.productThumbnailImage, unit: userId }));
+    this.params.forEach((param: Param): void => {
+
+      planoutParams.set(param.param, new PlanOut.Ops.Random.WeightedChoice({ choices: param.choices.map((i) => i.choice), weights: param.choices.map((i) => i.weight), unit: userId }));
+
+    });
 
   }
 
