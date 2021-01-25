@@ -1,8 +1,7 @@
 export interface Param {
   param: string;
-  operation: 'uniform' | 'weighted',
   choices: {
-    choice: string;
+    choice: boolean | string;
     weight: number;
   }[];
 }

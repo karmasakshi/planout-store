@@ -3,14 +3,11 @@ import * as PlanOut from 'planout';
 
 export class Experiment extends PlanOut.Experiment<number, Configuration> {
 
-  private name: undefined | string = undefined;
   private params: Param[] = [];
 
-  constructor(name: string, userId: number, params: Param[]) {
+  constructor(userId: number, params: Param[]) {
 
     super(userId);
-
-    this.name = name;
 
     this.params = params;
 
@@ -22,7 +19,7 @@ export class Experiment extends PlanOut.Experiment<number, Configuration> {
 
   previouslyLogged(): boolean { return this._exposureLogged; }
 
-  setup(): any { this.setName(this.name); }
+  setup(): any { this.setName('XP'); }
 
   getParamNames(): any { return this.getDefaultParamNames(); }
 
