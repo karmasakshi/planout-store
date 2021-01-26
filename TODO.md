@@ -4,3 +4,8 @@
 - Add analytics API
 - Add analytics graph
 - Add Configuration page
+- Add custom name
+- Add config form
+- Add experiment form
+- Add multi experiment support
+- Add conditional user experiment execution

@@ -35,6 +35,13 @@
     },
     "api-interfaces": {
       "tags": []
+    },
+    "form": {
+      "tags": []
+    },
+    "form-e2e": {
+      "tags": [],
+      "implicitDependencies": ["form"]
     }
   }
 }
