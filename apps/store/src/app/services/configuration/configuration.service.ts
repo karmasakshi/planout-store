@@ -9,7 +9,7 @@ import { UserService } from '../user/user.service';
 })
 export class ConfigurationService {
 
-  public configuration$: BehaviorSubject<Configuration> = new BehaviorSubject({
+  private currentConfiguration: Configuration = {
     buyCtaColor: 'primary',
     buyCtaText: 'BUY NOW',
     detailCtaColor: 'accent',
@@ -17,7 +17,9 @@ export class ConfigurationService {
     isReviewsPrioritized: false,
     productHeroImage: 'right',
     productThumbnailImage: 'bottom'
-  });
+  };
+
+  public configuration$: BehaviorSubject<Configuration> = new BehaviorSubject(this.currentConfiguration);
 
   public constructor(
     private httpClient: HttpClient,
@@ -34,7 +36,9 @@ export class ConfigurationService {
 
       (configuration: Configuration): void => {
 
-        this.configuration$.next(configuration);
+        this.currentConfiguration = { ...this.currentConfiguration, ...configuration }
+
+        this.configuration$.next(this.currentConfiguration);
 
       }
 

@@ -1,3 +1,100 @@
-<mat-toolbar>
-  <span style="cursor: pointer;">Config</span>
-</mat-toolbar>
+<mat-toolbar>Configuration Tool</mat-toolbar>
+
+<mat-card style="margin: 24px;">
+  <mat-card-content>
+    <h2>Buy CTA Color</h2>
+    <form [formGroup]="buyCtaColor">
+      <mat-checkbox color="primary" formControlName="isEnabled">Enabled?</mat-checkbox>
+      <hr>
+      <mat-form-field appearance="fill">
+        <mat-label>Variants</mat-label>
+        <input matInput type="text" formControlName="variants">
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<mat-card style="margin: 24px;">
+  <mat-card-content>
+    <h2>Buy CTA Text</h2>
+    <form [formGroup]="buyCtaText">
+      <mat-checkbox color="primary" formControlName="isEnabled">Enabled?</mat-checkbox>
+      <hr>
+      <mat-form-field appearance="fill">
+        <mat-label>Variants</mat-label>
+        <input matInput type="text" formControlName="variants">
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<mat-card style="margin: 24px;">
+  <mat-card-content>
+    <h2>Detail CTA Color</h2>
+    <form [formGroup]="detailCtaColor">
+      <mat-checkbox color="primary" formControlName="isEnabled">Enabled?</mat-checkbox>
+      <hr>
+      <mat-form-field appearance="fill">
+        <mat-label>Variants</mat-label>
+        <input matInput type="text" formControlName="variants">
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<mat-card style="margin: 24px;">
+  <mat-card-content>
+    <h2>Detail CTA Text</h2>
+    <form [formGroup]="detailCtaText">
+      <mat-checkbox color="primary" formControlName="isEnabled">Enabled?</mat-checkbox>
+      <hr>
+      <mat-form-field appearance="fill">
+        <mat-label>Variants</mat-label>
+        <input matInput type="text" formControlName="variants">
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<mat-card style="margin: 24px;">
+  <mat-card-content>
+    <h2>Prioritize Reviews</h2>
+    <form [formGroup]="isReviewsPrioritized">
+      <mat-checkbox color="primary" formControlName="isEnabled">Enabled?</mat-checkbox>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<mat-card style="margin: 24px;">
+  <mat-card-content>
+    <h2>Product Hero Image</h2>
+    <form [formGroup]="productHeroImage">
+      <mat-checkbox color="primary" formControlName="isEnabled">Enabled?</mat-checkbox>
+      <hr>
+      <mat-form-field appearance="fill">
+        <mat-label>Variants</mat-label>
+        <input matInput type="text" formControlName="variants">
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<mat-card style="margin: 24px;">
+  <mat-card-content>
+    <h2>Product Thumbnail Image</h2>
+    <form [formGroup]="productThumbnailImage">
+      <mat-checkbox color="primary" formControlName="isEnabled">Enabled?</mat-checkbox>
+      <hr>
+      <mat-form-field appearance="fill">
+        <mat-label>Variants</mat-label>
+        <input matInput type="text" formControlName="variants">
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-content>
+    <button color="primary" mat-raised-button (click)="saveConfig()" type="button">SAVE</button>
+  </mat-card-content>
+</mat-card>

@@ -5,123 +5,7 @@ import { Experiment } from '../experiment';
 @Injectable()
 export class ConfigurationService {
 
-  private params: Param[] = [
-    {
-      param: 'buyCtaColor',
-      choices: [
-        {
-          choice: 'accent',
-          weight: 1
-        },
-        {
-          choice: 'primary',
-          weight: 1
-        },
-        {
-          choice: 'warn',
-          weight: 1
-        }
-      ]
-    },
-    {
-      param: 'buyCtaText',
-      choices: [
-        {
-          choice: 'BUY NOW',
-          weight: 1
-        },
-        {
-          choice: 'GET IT NOW',
-          weight: 1
-        },
-        {
-          choice: 'ADD TO CART',
-          weight: 1
-        }
-      ]
-    },
-    {
-      param: 'detailCtaColor',
-      choices: [
-        {
-          choice: 'accent',
-          weight: 1
-        },
-        {
-          choice: 'primary',
-          weight: 1
-        },
-        {
-          choice: 'warn',
-          weight: 1
-        }
-      ]
-    },
-    {
-      param: 'detailCtaText',
-      choices: [
-        {
-          choice: 'VIEW',
-          weight: 1
-        },
-        {
-          choice: 'EXPLORE',
-          weight: 1
-        },
-        {
-          choice: 'DETAILS',
-          weight: 1
-        }
-      ]
-    },
-    {
-      param: 'isReviewsPrioritized',
-      choices: [
-        {
-          choice: true,
-          weight: 1
-        },
-        {
-          choice: false,
-          weight: 1
-        }
-      ]
-    },
-    {
-      param: 'productHeroImage',
-      choices: [
-        {
-          choice: 'left',
-          weight: 1
-        },
-        {
-          choice: 'bottom',
-          weight: 1
-        },
-        {
-          choice: 'right',
-          weight: 1
-        }
-      ]
-    },
-    {
-      param: 'productThumbnailImage',
-      choices: [
-        {
-          choice: 'left',
-          weight: 1
-        },
-        {
-          choice: 'bottom',
-          weight: 1
-        },
-        {
-          choice: 'right',
-          weight: 1
-        }
-      ]
-    }
-  ];
+  private params: Param[] = [];
 
   get(id: string): Configuration {
 
@@ -136,6 +20,12 @@ export class ConfigurationService {
       productHeroImage: experiment.get('productHeroImage', 'bottom'),
       productThumbnailImage: experiment.get('productThumbnailImage', 'bottom'),
     };
+
+  }
+
+  set(params: Param[]) {
+
+    this.params = params;
 
   }
 
